@@ -13,7 +13,7 @@ const Menu = ({ setCurrentImageIndex, currentImageIndex, images }) => {
         <button 
           className='rounded-lg bg-white text-accent text-xl text-center border w-36 hover:text-white hover:bg-accentHover'
         >
-          Customização
+          Customizar
         </button>
       </div>
     </div>
