@@ -1,15 +1,13 @@
-import React from 'react';
+// Menu.js
 
-const Menu = ({ onEvoluirClick }) => { // Recebe a função onEvoluirClick como propriedade
+import React from 'react';
+import Evoluir from './Evoluir'; // Importa o componente agrupado Evoluir
+
+const Menu = ({ setCurrentImageIndex, currentImageIndex, images }) => {
   return (
     <div className='flex gap-x-4 m-2 container'>
       <div>
-        <button 
-          className='rounded-lg bg-white text-accent text-xl text-center border w-36 hover:text-white hover:bg-accentHover'
-          onClick={onEvoluirClick} // Chama a função onEvoluirClick quando o botão é clicado
-        >
-          Evoluir
-        </button>
+        <Evoluir setCurrentImageIndex={setCurrentImageIndex} currentImageIndex={currentImageIndex} images={images} />
       </div>
       <div>
         <button 
