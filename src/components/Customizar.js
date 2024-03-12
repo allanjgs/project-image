@@ -1,17 +1,14 @@
-// Customizar.js
-
 import React from 'react';
 
-const CustomizarButton = ({ onCustomizarClick }) => {
+const Customizar = ({ isCustomizing, setIsCustomizing }) => {
   const handleCustomizarClick = () => {
-    // Implemente a lógica de customização aqui, se necessário
+    setIsCustomizing(!isCustomizing); // Inverte o estado de isCustomizing ao clicar no botão
     console.log("Botão Customizar clicado!");
-    onCustomizarClick(); // Chama a função passada como propriedade quando o botão é clicado
   };
 
   return (
     <button 
-      className='rounded-lg bg-white text-accent text-xl text-center border w-36 hover:text-white hover:bg-accentHover'
+      className={`rounded-lg bg-${isCustomizing ? 'red' : 'white'} text-${isCustomizing ? 'white' : 'accent'} text-xl text-center border w-36 hover:text-white hover:bg-accentHover`}
       onClick={handleCustomizarClick} // Chama a função de manipulação de clique personalizada
     >
       Customizar
@@ -19,4 +16,5 @@ const CustomizarButton = ({ onCustomizarClick }) => {
   );
 }
 
-export default CustomizarButton;
+export default Customizar;
+ 

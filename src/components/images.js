@@ -5,3 +5,4 @@ function importAll(r) {
 const images = importAll(require.context('../assets/lap', false, /\.(png)$/));
 
 export default images;
+
