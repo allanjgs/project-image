@@ -1,3 +1,5 @@
+// App.js
+
 import React, { useState } from 'react';
 import Main from './Main';
 import Menu from './Menu';
@@ -9,13 +11,19 @@ const App = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const allImages = [nullImage, ...lapImages];
 
-  const handleEvoluirClick = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % allImages.length);
+  const handleCustomizarClick = () => {
+    // Implemente a lógica de customização aqui, se necessário
+    console.log("Botão Customizar clicado!");
   };
 
   return (
     <>
-      <Menu setCurrentImageIndex={setCurrentImageIndex} currentImageIndex={currentImageIndex} images={allImages} />
+      <Menu 
+        setCurrentImageIndex={setCurrentImageIndex} 
+        currentImageIndex={currentImageIndex} 
+        images={allImages} 
+        onCustomizarClick={handleCustomizarClick} // Passa a função handleCustomizarClick como propriedade
+      />
       <Main currentImage={allImages[currentImageIndex]} />
     </>
   );
