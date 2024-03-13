@@ -40,8 +40,11 @@ const Main = ({ currentImage, isCustomizing, images }) => {
           <div
             key={frameNumber}
             id={`frame${frameNumber}`}
-            className={`w-[108px] h-[108px] absolute z-50 cursor-pointer ${isCustomizing ? 'hover:bg-red-200' : ''}`}
-            style={{ marginTop: frameNumber === 1 ? '107px' : frameNumber === 2 ? '25px' : frameNumber === 3 ? '25px' : frameNumber === 4 ? '148px' : '279px', marginLeft: frameNumber === 1 ? '16px' : frameNumber === 2 ? '229px' : frameNumber === 3 ? '463px' : frameNumber === 4 ? '155px' : '155px' }}
+            className={`w-[108px] h-[108px] absolute z-400 cursor-pointer ${isCustomizing ? 'hover:bg-red-200' : ''}`}
+            style={{
+              marginTop: frameNumber === 1 ? '107px' : frameNumber === 2 ? '25px' : frameNumber === 3 ? '26px' : frameNumber === 4 ? '148px' : '279px',
+              marginLeft: frameNumber === 1 ? '16px' : frameNumber === 2 ? '229px' : frameNumber === 3 ? '463px' : frameNumber === 4 ? '155px' : '155px'
+            }}
             onClick={() => handleFrameClick(frameNumber)}
           >
             {selectedFrames[frameNumber] && (

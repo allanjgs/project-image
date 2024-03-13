@@ -12,7 +12,7 @@ const Selection = ({ isOpen, onSelectImage }) => {
   const frameImages = importAll(require.context('../assets/frame', false, /\.(png)$/));
 
   return (
-    <div className="bg-white border border-gray-300 p-4 h-300 overflow-y-auto flex flex-row gap-x-2 fixed bottom-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
+    <div className="bg-white border border-gray-300 p-4 h-300 overflow-y-auto flex flex-row gap-x-2 fixed top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
       {frameImages.map((imageUrl, index) => (
         <SelectionItem key={index} imageUrl={imageUrl} onSelectImage={onSelectImage} />
       ))}
