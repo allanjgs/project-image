@@ -30,10 +30,14 @@ const Main = ({ currentImage, isCustomizing, images }) => {
     setIsSelectionOpen(false);
   };
 
-  const handleClearFrame = (frameNumber) => {
+  const handleClearFrame = () => {
     const updatedSelectedFrames = { ...selectedFrames };
-    delete updatedSelectedFrames[frameNumber];
+    delete updatedSelectedFrames[selectedFrameNumber];
     setSelectedFrames(updatedSelectedFrames);
+    setIsSelectionOpen(false);
+  };
+
+  const handleCloseSelection = () => {
     setIsSelectionOpen(false);
   };
 
@@ -60,7 +64,7 @@ const Main = ({ currentImage, isCustomizing, images }) => {
           </div>
         ))}
         {/* Renderiza o componente Selection se isCustomizing for true e a caixa de seleção estiver aberta */}
-        <Selection isOpen={isCustomizing && isSelectionOpen} onSelectImage={handleSelectImage} onClearFrame={handleClearFrame} selectedFrameNumber={selectedFrameNumber} />
+        <Selection isOpen={isCustomizing && isSelectionOpen} onSelectImage={handleSelectImage} onClearFrame={handleClearFrame} onClose={handleCloseSelection} />
       </div>
     </div>
   );
