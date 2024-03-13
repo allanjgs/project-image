@@ -27,9 +27,6 @@ module.exports = {
       backgroundImage: {
         // imagens de background aqui
         bg1: "url('/src/assets/background.png')",
-        Image1: "url('/src/assets/Imagem1.png')",
-        Image2: "url('/src/assets/Imagem2.png')",
-        Image3: "url('/src/assets/Imagem3.png')",
       },
     },
   },

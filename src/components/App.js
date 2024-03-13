@@ -1,5 +1,3 @@
-// App.js
-
 import React, { useState } from 'react';
 import Main from './Main';
 import Menu from './Menu';
@@ -25,7 +23,7 @@ const App = () => {
         currentImageIndex={currentImageIndex} 
         images={allImages} 
         onCustomizarClick={handleCustomizarClick} 
-        isCustomizing={isCustomizing} // Passando a propriedade isCustomizing
+        isCustomizing={isCustomizing} 
         setIsCustomizing={setIsCustomizing} 
       />
       <Main currentImage={allImages[currentImageIndex]} isCustomizing={isCustomizing} frames={allFrames} /> 

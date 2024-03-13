@@ -1,5 +1,3 @@
-// Evoluir.js
-
 import React from 'react';
 
 const handleEvoluirClick = (setCurrentImageIndex, currentImageIndex, images) => {

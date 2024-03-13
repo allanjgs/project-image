@@ -1,5 +1,3 @@
-// Main.js
-
 import React, { useState, useEffect } from 'react';
 import Selection from './Selection';
 
@@ -63,7 +61,6 @@ const Main = ({ currentImage, isCustomizing, images }) => {
             )}
           </div>
         ))}
-        {/* Renderiza o componente Selection se isCustomizing for true e a caixa de seleção estiver aberta */}
         <Selection isOpen={isCustomizing && isSelectionOpen} onSelectImage={handleSelectImage} onClearFrame={handleClearFrame} onClose={handleCloseSelection} />
       </div>
     </div>

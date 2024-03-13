@@ -1,5 +1,3 @@
-// Selection.js
-
 import React from 'react';
 import SelectionItem from './SelectionItem';
 import { TbPhotoCancel } from "react-icons/tb";
@@ -14,7 +12,6 @@ function importAll(r) {
 const Selection = ({ isOpen, onSelectImage, onClearFrame, onClose }) => {
   if (!isOpen) return null;
 
-  // Importe as imagens apenas quando necessário
   const frameImages = importAll(require.context('../assets/frame', false, /\.(png)$/));
 
   return (
@@ -27,7 +24,7 @@ const Selection = ({ isOpen, onSelectImage, onClearFrame, onClose }) => {
           <SelectionItem key={index} imageUrl={imageUrl} onSelectImage={onSelectImage} />
         ))}
       </div>
-      <button className="mr-4 cursor-pointer hover:text-gray-400"  onClick={onClearFrame}>
+      <button className="mr-4 cursor-pointer hover:text-gray-400" onClick={onClearFrame}>
         <TbPhotoCancel size={100} />
       </button>
     </div>
