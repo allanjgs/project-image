@@ -20,21 +20,28 @@ const Main = ({ currentImage, isCustomizing, images }) => {
   const handleFrameClick = (frameNumber) => {
     if (isCustomizing) {
       setIsSelectionOpen(true);
-      setSelectedFrameNumber(frameNumber); // Armazena o número do frame selecionado
+      setSelectedFrameNumber(frameNumber);
     }
   };
 
   const handleSelectImage = (imageUrl) => {
     const updatedSelectedFrames = { ...selectedFrames, [selectedFrameNumber]: imageUrl };
     setSelectedFrames(updatedSelectedFrames);
-    setIsSelectionOpen(false); // Fechar a caixa de seleção após selecionar a imagem
+    setIsSelectionOpen(false);
+  };
+
+  const handleClearFrame = (frameNumber) => {
+    const updatedSelectedFrames = { ...selectedFrames };
+    delete updatedSelectedFrames[frameNumber];
+    setSelectedFrames(updatedSelectedFrames);
+    setIsSelectionOpen(false);
   };
 
   return (
     <div className='bg-dark h-screen w-full flex items-center justify-center relative'>
       <div className='bg-bg1 bg-no-repeat bg-contain w-[700px] h-[700px] relative'>
-        <div className={`${isVisible ? 'opacity-100 transition-opacity duration-500' : 'opacity-0'}`}>
-          {currentImage && <img src={currentImage} alt="" className='absolute bottom-0 items-center z-30' />}
+        <div className={`${isVisible ? 'opacity-100 transition-opacity duration-500 absolute inset-x-0 bottom-0 flex justify-center' : 'opacity-0'}`}>
+          {currentImage && <img src={currentImage} alt="" className='h-[365px] object-cover z-50' />}
         </div>
         {[1, 2, 3, 4, 5].map((frameNumber) => (
           <div
@@ -53,7 +60,7 @@ const Main = ({ currentImage, isCustomizing, images }) => {
           </div>
         ))}
         {/* Renderiza o componente Selection se isCustomizing for true e a caixa de seleção estiver aberta */}
-        <Selection isOpen={isCustomizing && isSelectionOpen} onSelectImage={handleSelectImage} />
+        <Selection isOpen={isCustomizing && isSelectionOpen} onSelectImage={handleSelectImage} onClearFrame={handleClearFrame} selectedFrameNumber={selectedFrameNumber} />
       </div>
     </div>
   );
