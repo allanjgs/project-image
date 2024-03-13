@@ -8,7 +8,7 @@ const Customizar = ({ isCustomizing, setIsCustomizing }) => {
 
   return (
     <button 
-      className={`rounded-lg bg-${isCustomizing ? 'red' : 'white'} text-${isCustomizing ? 'white' : 'accent'} text-xl text-center border w-36 hover:text-white hover:bg-accentHover`}
+      className={`rounded-lg ${isCustomizing ? 'bg-red-700 text-white font-bold' : 'bg-white text-accent'} text-xl text-center w-36 hover:text-white hover:bg-accentHover`}
       onClick={handleCustomizarClick}
     >
       Customizar
@@ -17,4 +17,3 @@ const Customizar = ({ isCustomizing, setIsCustomizing }) => {
 }
 
 export default Customizar;
- 
